@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
+/* ─── Design tokens — Sage & Silence ───────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --sage-bg:      #EFF4EE;
+  --sage-light:   #E2EDE0;
+  --sage-mid:     #C8D9C5;
+  --sage-border:  #D0DDD0;
+
+  /* Forest — primary */
+  --forest:       #1A3D2B;
+  --forest-mid:   #2D5C40;
+  --forest-light: #4A7C5E;
+
+  /* Warm sand accent */
+  --sand:         #C8724A;
+  --sand-light:   #E8956D;
+  --sand-pale:    #F7EDE7;
+
+  /* Text */
+  --text-primary:   #1A3D2B;
+  --text-secondary: #4A6859;
+  --text-muted:     #7A9485;
+  --text-placeholder: #A8BDB4;
+
+  /* Surfaces */
+  --white:        #FFFFFF;
+  --card:         #FFFFFF;
+
+  /* Fonts */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─── Base ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--sage-bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--forest);
+  color: var(--white);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--sage-bg); }
+::-webkit-scrollbar-thumb { background: var(--sage-mid); border-radius: 3px; }
+
+/* ─── Animations ─────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%  { transform: translateY(-12px) rotate(1deg); }
+  66%  { transform: translateY(-6px) rotate(-1deg); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-18px) rotate(2deg); }
+}
+
+.fade-up   { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.fade-in   { animation: fadeIn 0.5s ease both; }
+.fade-up-1 { animation-delay: 0.06s; }
+.fade-up-2 { animation-delay: 0.14s; }
+.fade-up-3 { animation-delay: 0.22s; }
+.fade-up-4 { animation-delay: 0.30s; }
+.fade-up-5 { animation-delay: 0.40s; }
+
+/* ─── Organic blob shapes ────────────────────────────────────────── */
+.blob {
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob-float { animation: float 12s ease-in-out infinite; }
+.blob-float-slow { animation: floatSlow 18s ease-in-out infinite; }
+
+/* ─── Card style ─────────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--sage-border);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(26, 61, 43, 0.06),
+              0 1px 3px rgba(26, 61, 43, 0.04);
+}
+
+/* ─── Button base ────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--forest);
+  color: var(--white);
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(26, 61, 43, 0.22);
+  letter-spacing: 0.005em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--forest-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(26, 61, 43, 0.28);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--sage-border);
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 15px 28px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-ghost:hover {
+  border-color: var(--sage-mid);
+  background: var(--sage-light);
+}
+
+/* ─── Tag pill ───────────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sage-light);
+  border: 1px solid var(--sage-mid);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+/* ─── Section divider ────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--sage-border), transparent);
+  margin: 0;
+  border: none;
 }

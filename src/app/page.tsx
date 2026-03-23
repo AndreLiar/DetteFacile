@@ -424,6 +424,216 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PWA Installation Guide ───────────────────────────── */}
+      <section style={{
+        maxWidth: 1100,
+        margin: "0 auto 80px",
+        padding: "0 24px",
+      }}>
+        <div className="card" style={{ padding: "48px 32px", overflow: "hidden", position: "relative" }}>
+          {/* Background decoration */}
+          <div className="blob blob-float" style={{
+            width: 200,
+            height: 200,
+            background: "var(--sage-light)",
+            opacity: 0.5,
+            top: -40,
+            right: -30,
+          }} />
+          
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+              <div className="tag" style={{ marginBottom: 16, display: "inline-flex" }}>
+                📱 Application mobile
+              </div>
+              <h2 style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+                fontWeight: 400,
+                color: "var(--forest)",
+                margin: "0 0 12px",
+                letterSpacing: "-0.02em",
+              }}>
+                Installez l&apos;app sur votre téléphone
+              </h2>
+              <p style={{
+                fontSize: "1rem",
+                color: "var(--text-secondary)",
+                margin: 0,
+                lineHeight: 1.6,
+              }}>
+                Accédez à DetteFacile comme une vraie app, même hors ligne
+              </p>
+            </div>
+
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 32,
+            }}>
+              {/* iPhone Guide */}
+              <div style={{
+                background: "var(--sage-bg)",
+                borderRadius: 16,
+                padding: "28px 24px",
+                border: "1px solid var(--sage-border)",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <div style={{
+                    width: 40,
+                    height: 40,
+                    background: "var(--forest)",
+                    borderRadius: 10,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}>
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
+                      <path d="M13.5 1C12.9 1.6 11.8 2 10.9 2C10.8 1.4 11.1 0.6 11.6 0C12.2 -0.6 13.4 -1 14.2 -1C14.3 -0.4 14 0.4 13.5 1ZM14.1 2.1C12.5 2 11.1 3.1 10.3 3.1C9.5 3.1 8.3 2.1 6.9 2.1C5 2.2 3.2 3.3 2.2 5C0.2 8.4 1.7 13.5 3.6 16.3C4.5 17.7 5.6 19.2 7 19.2C8.3 19.2 8.8 18.4 10.5 18.4C12.2 18.4 12.6 19.2 14 19.2C15.5 19.2 16.5 17.9 17.4 16.5C18.1 15.4 18.4 14.3 18.4 14.3C18.4 14.3 15.9 13.3 15.9 10.4C15.9 7.9 17.9 6.8 18 6.8C16.8 4.9 14.9 4.7 14.1 4.7V2.1Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontFamily: "var(--font-display)",
+                    fontStyle: "italic",
+                    fontSize: "1.3rem",
+                    fontWeight: 400,
+                    color: "var(--forest)",
+                    margin: 0,
+                  }}>iPhone / iPad</h3>
+                </div>
+
+                <ol style={{
+                  margin: 0,
+                  paddingLeft: 20,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                }}>
+                  {[
+                    { icon: "🌐", text: "Ouvrez dette-facile.vercel.app dans Safari" },
+                    { icon: "⬆️", text: "Appuyez sur le bouton Partager (en bas)" },
+                    { icon: "➕", text: "Sélectionnez \"Sur l'écran d'accueil\"" },
+                    { icon: "✅", text: "Confirmez - l'app apparaît sur votre écran" },
+                  ].map((step, i) => (
+                    <li key={i} style={{
+                      fontSize: "0.9rem",
+                      color: "var(--text-secondary)",
+                      lineHeight: 1.6,
+                      fontFamily: "var(--font-body)",
+                    }}>
+                      <strong style={{ color: "var(--forest)" }}>{step.icon}</strong> {step.text}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Android Guide */}
+              <div style={{
+                background: "var(--sage-bg)",
+                borderRadius: 16,
+                padding: "28px 24px",
+                border: "1px solid var(--sage-border)",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                  <div style={{
+                    width: 40,
+                    height: 40,
+                    background: "var(--forest)",
+                    borderRadius: 10,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}>
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
+                      <path d="M0.5 4.5C0.5 3.4 1.4 2.5 2.5 2.5H15.5C16.6 2.5 17.5 3.4 17.5 4.5V15.5C17.5 16.6 16.6 17.5 15.5 17.5H2.5C1.4 17.5 0.5 16.6 0.5 15.5V4.5Z" stroke="white" strokeWidth="1.5"/>
+                      <path d="M11.5 0L13.5 2.5M6.5 0L4.5 2.5M2.5 17.5V19.5M15.5 17.5V19.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontFamily: "var(--font-display)",
+                    fontStyle: "italic",
+                    fontSize: "1.3rem",
+                    fontWeight: 400,
+                    color: "var(--forest)",
+                    margin: 0,
+                  }}>Android</h3>
+                </div>
+
+                <ol style={{
+                  margin: 0,
+                  paddingLeft: 20,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                }}>
+                  {[
+                    { icon: "🌐", text: "Ouvrez dette-facile.vercel.app dans Chrome" },
+                    { icon: "⋮", text: "Appuyez sur le menu (3 points en haut)" },
+                    { icon: "📲", text: "Sélectionnez \"Installer l'application\"" },
+                    { icon: "✅", text: "Confirmez - l'app s'installe automatiquement" },
+                  ].map((step, i) => (
+                    <li key={i} style={{
+                      fontSize: "0.9rem",
+                      color: "var(--text-secondary)",
+                      lineHeight: 1.6,
+                      fontFamily: "var(--font-body)",
+                    }}>
+                      <strong style={{ color: "var(--forest)" }}>{step.icon}</strong> {step.text}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            {/* Benefits */}
+            <div style={{
+              marginTop: 32,
+              padding: "20px 24px",
+              background: "var(--sage-light)",
+              borderRadius: 12,
+              border: "1px solid var(--sage-mid)",
+            }}>
+              <div style={{
+                fontSize: "0.7rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                color: "var(--text-muted)",
+                marginBottom: 12,
+                fontFamily: "var(--font-body)",
+              }}>Avantages de l&apos;installation</div>
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: 16,
+              }}>
+                {[
+                  { icon: "⚡", text: "Accès instantané" },
+                  { icon: "📴", text: "Fonctionne hors ligne" },
+                  { icon: "🎯", text: "Icône sur l'écran" },
+                  { icon: "🚀", text: "Plus rapide" },
+                ].map((benefit) => (
+                  <div key={benefit.text} style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                  }}>
+                    <span style={{ fontSize: "1.2rem" }}>{benefit.icon}</span>
+                    <span style={{
+                      fontSize: "0.85rem",
+                      color: "var(--text-secondary)",
+                      fontWeight: 500,
+                      fontFamily: "var(--font-body)",
+                    }}>{benefit.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ─────────────────────────────────────────── */}
       <section style={{
         maxWidth: 1100,

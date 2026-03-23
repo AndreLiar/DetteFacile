@@ -57,7 +57,7 @@ export default function Home() {
               fontWeight: 500,
               letterSpacing: "0.02em",
             }}>
-              ⚖ Droit français
+              Droit français
             </span>
             <Link href="/form" className="btn-primary" style={{ padding: "10px 22px", fontSize: "0.88rem", borderRadius: 12 }}>
               Commencer
@@ -103,7 +103,7 @@ export default function Home() {
           {/* Left */}
           <div style={{ maxWidth: 640 }}>
             <div className="fade-up tag" style={{ marginBottom: 28 }}>
-              <span>🌿</span> Conforme au Code Civil français
+              Conforme au Code Civil français
             </div>
 
             <h1 className="fade-up fade-up-1" style={{
@@ -402,13 +402,13 @@ export default function Home() {
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
           {[
-            "🤝 Prêt entre amis",
-            "👨‍👩‍👧 Prêt familial",
-            "🏠 Colocation",
-            "💼 Arrangement professionnel",
-            "🎓 Aide aux études",
-            "🚗 Achat partagé",
-            "🛠 Avance sur travaux",
+            "Prêt entre amis",
+            "Prêt familial",
+            "Colocation",
+            "Arrangement professionnel",
+            "Aide aux études",
+            "Achat partagé",
+            "Avance sur travaux",
           ].map((tag) => (
             <div key={tag} style={{
               background: "var(--white)",
@@ -444,7 +444,7 @@ export default function Home() {
           <div style={{ position: "relative", zIndex: 2 }}>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
               <div className="tag" style={{ marginBottom: 16, display: "inline-flex" }}>
-                📱 Application mobile
+                Application mobile
               </div>
               <h2 style={{
                 fontFamily: "var(--font-display)",
@@ -511,10 +511,10 @@ export default function Home() {
                   gap: 12,
                 }}>
                   {[
-                    { icon: "🌐", text: "Ouvrez dette-facile.vercel.app dans Safari" },
-                    { icon: "⬆️", text: "Appuyez sur le bouton Partager (en bas)" },
-                    { icon: "➕", text: "Sélectionnez \"Sur l'écran d'accueil\"" },
-                    { icon: "✅", text: "Confirmez - l'app apparaît sur votre écran" },
+                    "Ouvrez dette-facile.vercel.app dans Safari",
+                    "Appuyez sur le bouton Partager (en bas)",
+                    "Sélectionnez \"Sur l'écran d'accueil\"",
+                    "Confirmez - l'app apparaît sur votre écran",
                   ].map((step, i) => (
                     <li key={i} style={{
                       fontSize: "0.9rem",
@@ -522,7 +522,7 @@ export default function Home() {
                       lineHeight: 1.6,
                       fontFamily: "var(--font-body)",
                     }}>
-                      <strong style={{ color: "var(--forest)" }}>{step.icon}</strong> {step.text}
+                      {step}
                     </li>
                   ))}
                 </ol>
@@ -568,10 +568,10 @@ export default function Home() {
                   gap: 12,
                 }}>
                   {[
-                    { icon: "🌐", text: "Ouvrez dette-facile.vercel.app dans Chrome" },
-                    { icon: "⋮", text: "Appuyez sur le menu (3 points en haut)" },
-                    { icon: "📲", text: "Sélectionnez \"Installer l'application\"" },
-                    { icon: "✅", text: "Confirmez - l'app s'installe automatiquement" },
+                    "Ouvrez dette-facile.vercel.app dans Chrome",
+                    "Appuyez sur le menu (3 points en haut)",
+                    "Sélectionnez \"Installer l'application\"",
+                    "Confirmez - l'app s'installe automatiquement",
                   ].map((step, i) => (
                     <li key={i} style={{
                       fontSize: "0.9rem",
@@ -579,7 +579,7 @@ export default function Home() {
                       lineHeight: 1.6,
                       fontFamily: "var(--font-body)",
                     }}>
-                      <strong style={{ color: "var(--forest)" }}>{step.icon}</strong> {step.text}
+                      {step}
                     </li>
                   ))}
                 </ol>
@@ -609,23 +609,29 @@ export default function Home() {
                 gap: 16,
               }}>
                 {[
-                  { icon: "⚡", text: "Accès instantané" },
-                  { icon: "📴", text: "Fonctionne hors ligne" },
-                  { icon: "🎯", text: "Icône sur l'écran" },
-                  { icon: "🚀", text: "Plus rapide" },
+                  "Accès instantané",
+                  "Fonctionne hors ligne",
+                  "Icône sur l'écran",
+                  "Plus rapide",
                 ].map((benefit) => (
-                  <div key={benefit.text} style={{
+                  <div key={benefit} style={{
                     display: "flex",
                     alignItems: "center",
                     gap: 8,
                   }}>
-                    <span style={{ fontSize: "1.2rem" }}>{benefit.icon}</span>
+                    <div style={{
+                      width: 6,
+                      height: 6,
+                      background: "var(--forest)",
+                      borderRadius: "50%",
+                      flexShrink: 0,
+                    }} />
                     <span style={{
                       fontSize: "0.85rem",
                       color: "var(--text-secondary)",
                       fontWeight: 500,
                       fontFamily: "var(--font-body)",
-                    }}>{benefit.text}</span>
+                    }}>{benefit}</span>
                   </div>
                 ))}
               </div>

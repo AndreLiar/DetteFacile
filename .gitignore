@@ -36,3 +36,7 @@ next-env.d.ts
 
 # BMAD output
 _bmad-output/
+
+CLAUDE.md
+AGENT.md
+billionuser.md

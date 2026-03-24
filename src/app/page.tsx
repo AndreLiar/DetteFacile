@@ -103,7 +103,7 @@ export default function Home() {
           {/* Left */}
           <div style={{ maxWidth: 640 }}>
             <div className="fade-up tag" style={{ marginBottom: 28 }}>
-              Conforme au Code Civil français
+              Tu as déjà prêté de l&apos;argent à un proche sans document ?
             </div>
 
             <h1 className="fade-up fade-up-1" style={{
@@ -116,9 +116,9 @@ export default function Home() {
               color: "var(--forest)",
               margin: "0 0 20px",
             }}>
-              Formalisez un prêt<br />
-              entre proches —<br />
-              <span style={{ color: "var(--sand)" }}>en toute sérénité.</span>
+              Les personnes sérieuses<br />
+              protègent leurs proches —<br />
+              <span style={{ color: "var(--sand)" }}>et leur relation.</span>
             </h1>
 
             <p className="fade-up fade-up-2" style={{
@@ -128,8 +128,7 @@ export default function Home() {
               marginBottom: 40,
               maxWidth: 500,
             }}>
-              DetteFacile génère une <strong style={{ color: "var(--forest)", fontWeight: 700 }}>reconnaissance de dette légale</strong> prête
-              à signer — sans notaire, sans complexité. Juste vous, votre proche, et un document clair.
+              La plupart des prêts entre amis finissent par créer des tensions. Pas parce que les gens sont malhonnêtes — mais parce qu&apos;il n&apos;y avait aucun document clair. DetteFacile génère une <strong style={{ color: "var(--forest)", fontWeight: 700 }}>reconnaissance de dette légale</strong> en moins de 60 secondes — sans notaire, sans complexité.
             </p>
 
             <div className="fade-up fade-up-3" style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
@@ -140,7 +139,7 @@ export default function Home() {
                 </svg>
               </Link>
               <span style={{ fontSize: "0.8rem", color: "var(--text-muted)", lineHeight: 1.5 }}>
-                Gratuit · Aucun compte · PDF téléchargeable
+                Pas besoin d&apos;être juriste. Pas besoin de notaire. 60 secondes suffisent.
               </span>
             </div>
           </div>
@@ -214,6 +213,90 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ── La réalité section ────────────────────────────────── */}
+      <section style={{
+        background: "var(--white)",
+        borderTop: "1px solid var(--sage-border)",
+        borderBottom: "1px solid var(--sage-border)",
+        padding: "72px 24px",
+      }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 64,
+            alignItems: "center",
+          }}>
+            <div>
+              <div className="tag" style={{ marginBottom: 20 }}>La réalité</div>
+              <h2 style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "italic",
+                fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+                fontWeight: 400,
+                color: "var(--forest)",
+                margin: "0 0 20px",
+                lineHeight: 1.2,
+                letterSpacing: "-0.02em",
+              }}>
+                La plupart des gens font<br />confiance à leur mémoire.<br />
+                <span style={{ color: "var(--sand)" }}>Les autres font confiance à un document.</span>
+              </h2>
+              <p style={{
+                fontSize: "1rem",
+                color: "var(--text-secondary)",
+                lineHeight: 1.7,
+                margin: "0 0 24px",
+              }}>
+                Ce n&apos;est pas un manque de confiance envers votre proche. C&apos;est exactement le contraire — c&apos;est ce qui <em>préserve</em> la confiance, même si les souvenirs divergent dans 6 mois.
+              </p>
+              <p style={{
+                fontSize: "0.9rem",
+                color: "var(--text-muted)",
+                lineHeight: 1.6,
+                margin: 0,
+                fontStyle: "italic",
+                fontFamily: "var(--font-display)",
+              }}>
+                &ldquo;On s&apos;en souviendra&rdquo; — c&apos;est ce que pensent ceux qui perdent leurs amis.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {[
+                { stat: "1 sur 3", label: "prêts entre proches créent des conflits durables", highlight: true },
+                { stat: "76%", label: "des gens regrettent de ne pas avoir formalisé un prêt", highlight: false },
+                { stat: "0€", label: "c'est ce que coûte la protection avec DetteFacile", highlight: false },
+              ].map((item) => (
+                <div key={item.stat} style={{
+                  padding: "20px 24px",
+                  background: item.highlight ? "var(--forest)" : "var(--sage-bg)",
+                  borderRadius: 14,
+                  border: `1px solid ${item.highlight ? "var(--forest)" : "var(--sage-border)"}`,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 20,
+                }}>
+                  <div style={{
+                    fontFamily: "var(--font-display)",
+                    fontStyle: "italic",
+                    fontSize: "1.8rem",
+                    fontWeight: 400,
+                    color: item.highlight ? "var(--white)" : "var(--forest)",
+                    minWidth: 70,
+                    letterSpacing: "-0.03em",
+                  }}>{item.stat}</div>
+                  <div style={{
+                    fontSize: "0.9rem",
+                    color: item.highlight ? "rgba(226,237,224,0.85)" : "var(--text-secondary)",
+                    lineHeight: 1.5,
+                  }}>{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── How it works ──────────────────────────────────────── */}
       <section style={{ maxWidth: 1100, margin: "0 auto", padding: "88px 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 56 }}>
@@ -227,7 +310,7 @@ export default function Home() {
             margin: 0,
             letterSpacing: "-0.02em",
           }}>
-            Simple. Guidé. Rassurant.
+            On va éviter le jargon juridique.<br />Juste ce qu&apos;il faut, dans l&apos;ordre.
           </h2>
         </div>
 
@@ -324,7 +407,7 @@ export default function Home() {
           }}>
             {/* Left text */}
             <div>
-              <div className="tag" style={{ marginBottom: 20 }}>Pourquoi DetteFacile</div>
+              <div className="tag" style={{ marginBottom: 20 }}>Pour les personnes organisées</div>
               <h2 style={{
                 fontFamily: "var(--font-display)",
                 fontStyle: "italic",
@@ -335,7 +418,8 @@ export default function Home() {
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
               }}>
-                L&apos;argent entre proches<br />mérite un document clair.
+                Ce n&apos;est pas parce que<br />tu ne fais pas confiance.<br />
+                <span style={{ color: "var(--sand)" }}>C&apos;est parce que tu tiens à eux.</span>
               </h2>
               <p style={{
                 fontSize: "1rem",
@@ -343,21 +427,20 @@ export default function Home() {
                 lineHeight: 1.7,
                 margin: "0 0 32px",
               }}>
-                Ni trop formel pour paraître méfiant, ni trop informel pour manquer de valeur juridique.
-                DetteFacile trouve le juste milieu — un document <em>humain</em> et <em>légal</em>.
+                Beaucoup pensent qu&apos;exiger un document, c&apos;est manquer de confiance. En réalité, c&apos;est l&apos;inverse — c&apos;est protéger la relation, pas seulement l&apos;argent. Les personnes qui formalisent leurs prêts gardent leurs amis. Les autres croient que ça n&apos;arrive qu&apos;aux autres.
               </p>
               <Link href="/form" className="btn-primary">
-                Essayer maintenant
+                Je suis quelqu&apos;un de sérieux →
               </Link>
             </div>
 
             {/* Right features */}
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {[
-                { icon: "⚡", title: "Moins d'une minute", desc: "Du formulaire au PDF téléchargeable. Zéro friction." },
-                { icon: "🔒", title: "Données 100% privées", desc: "Tout se passe dans votre navigateur. Rien n'est envoyé." },
-                { icon: "📱", title: "Optimisé mobile", desc: "Installable sur votre téléphone, fonctionne hors ligne." },
-                { icon: "⚖", title: "Valeur légale", desc: "Acte sous seing privé conforme aux articles 1359+ du Code Civil." },
+                { title: "Moins d'une minute", desc: "Du formulaire au PDF téléchargeable. Zéro friction." },
+                { title: "Données 100% privées", desc: "Tout se passe dans votre navigateur. Rien n'est envoyé." },
+                { title: "Optimisé mobile", desc: "Installable sur votre téléphone, fonctionne hors ligne." },
+                { title: "Valeur légale", desc: "Acte sous seing privé conforme aux articles 1359+ du Code Civil." },
               ].map((f) => (
                 <div key={f.title} style={{
                   display: "flex",
@@ -367,7 +450,6 @@ export default function Home() {
                   borderRadius: 14,
                   border: "1px solid var(--sage-border)",
                 }}>
-                  <span style={{ fontSize: "1.3rem", flexShrink: 0, lineHeight: 1.4 }}>{f.icon}</span>
                   <div>
                     <div style={{
                       fontWeight: 700,
@@ -440,7 +522,7 @@ export default function Home() {
             top: -40,
             right: -30,
           }} />
-          
+
           <div style={{ position: "relative", zIndex: 2 }}>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
               <div className="tag" style={{ marginBottom: 16, display: "inline-flex" }}>
@@ -640,6 +722,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Micro-yes funnel ──────────────────────────────────── */}
+      <section style={{
+        maxWidth: 860,
+        margin: "0 auto 40px",
+        padding: "0 24px",
+      }}>
+        <div className="card" style={{ padding: "48px 40px", textAlign: "center" }}>
+          <div style={{
+            fontFamily: "var(--font-display)",
+            fontStyle: "italic",
+            fontSize: "1.2rem",
+            color: "var(--text-muted)",
+            marginBottom: 32,
+            letterSpacing: "-0.01em",
+          }}>Avant de continuer, dis-moi juste...</div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 40, textAlign: "left" }}>
+            {[
+              "Tu veux protéger ta relation, pas juste ton argent ?",
+              "Tu préfères avoir un document clair plutôt que de te fier à ta mémoire ?",
+              "Tu es prêt en moins de 60 secondes ?",
+            ].map((question, i) => (
+              <div key={i} style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 16,
+                padding: "16px 20px",
+                background: "var(--sage-bg)",
+                borderRadius: 12,
+                border: "1px solid var(--sage-border)",
+              }}>
+                <div style={{
+                  width: 24,
+                  height: 24,
+                  background: "var(--forest)",
+                  borderRadius: 6,
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}>
+                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5l3.5 3.5L11 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <span style={{
+                  fontSize: "0.95rem",
+                  color: "var(--text-secondary)",
+                  lineHeight: 1.5,
+                }}>{question}</span>
+              </div>
+            ))}
+          </div>
+
+          <Link href="/form" className="btn-primary" style={{ fontSize: "1.05rem", padding: "17px 40px" }}>
+            Oui — créer mon document maintenant
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+          <div style={{ marginTop: 14, fontSize: "0.78rem", color: "var(--text-muted)" }}>
+            Gratuit · Aucun compte · Données 100% privées
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ─────────────────────────────────────────── */}
       <section style={{
         maxWidth: 1100,
@@ -681,8 +829,8 @@ export default function Home() {
               marginBottom: 12,
               lineHeight: 1.2,
             }}>
-              Prêtez en confiance.<br />
-              <span style={{ color: "var(--sage-light)" }}>Protégez votre relation.</span>
+              Les personnes sérieuses<br />ne laissent pas le hasard décider.<br />
+              <span style={{ color: "var(--sage-light)" }}>Elles formalisent.</span>
             </div>
             <p style={{
               color: "rgba(226,237,224,0.7)",
@@ -690,7 +838,7 @@ export default function Home() {
               marginBottom: 36,
               lineHeight: 1.6,
             }}>
-              {"Gratuit, privé, et prêt en moins d'une minute."}
+              {"Ce document ne coûte rien. L'absence de document, elle, peut tout coûter."}
             </p>
             <Link href="/form" style={{
               display: "inline-flex",
@@ -707,7 +855,7 @@ export default function Home() {
               transition: "transform 0.15s",
               boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
             }}>
-              Créer mon document
+              Créer mon document — gratuitement
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="var(--forest)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
